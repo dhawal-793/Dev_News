@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navlink {
+    @apply hover:underline decoration-orange-500 text-center decoration-2 active:underline underline-offset-8 p-3 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
+  }
+  .navLink-md{
+    @apply bg-black text-white flex flex-col fixed right-0 top-0 md:hidden text-xs px-10 h-screen justify-center min-w-[12rem] w-1/2 max-w-[18rem] gap-5
+  }
+}

@@ -20,7 +20,7 @@ const Navlinks = ({ navOpen, handleClick, className }: Props) => {
     }
     return (
 
-        <nav className={`gap-8 pb-10 mx-auto border-b ${className}`}>
+        <nav className={`gap-8 pb-5 md:justify-between mx-auto border-b ${className}`}>
             {navOpen && <button className="md:hidden absolute top-6 right-6" onClick={() => handleClick()}>
                 <XMarkIcon className="text-gray-300 hover:text-red-500 w-8 h-8 cursor-pointer z-50" />
             </button>}

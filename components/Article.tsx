@@ -1,4 +1,3 @@
-import FAC from "../public/FAC.png"
 import ReadMoreButton from "./ReadMoreButton"
 
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
 }
 
 const Article = ({ article }: Props) => {
-    const ImageSrc = article.image !== null ? article.image : FAC
+    const ImageSrc = article.image ? article.image : "/FAC.png"
     return (
         <article className="bg-slate-200 dark:bg-slate-800 flex flex-col shadow-md shadow-slate-400 dark:shadow-slate-700 hover:shadow-xl hover:shadow-slate-400 dark:hover:shadow-slate-700 hover:bg-slate-300/70 dark:hover:bg-slate-700/50 transition-all duration-200 ease-out rounded-lg max-w-md mx-auto">
             <img src={ImageSrc} alt={article.title} loading="lazy" className="h-60 w-full object-cover rounded-t-lg " />

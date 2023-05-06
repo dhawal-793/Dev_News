@@ -1,10 +1,9 @@
-"use client"
+'use client'
 
 import Navbar from "@/components/Navbar"
 import Navlinks from "@/components/Navlinks"
 import SearchBox from "@/components/SearchBox"
 import { useState } from "react"
-
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false)

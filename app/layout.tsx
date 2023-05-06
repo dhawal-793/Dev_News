@@ -2,7 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-import Header from './Header'
+import Header from '../components/Header'
 import Providers from './Providers'
 
 export const metadata = {

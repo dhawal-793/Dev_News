@@ -9,15 +9,15 @@ type Category =
 
 type Article = {
     author: string | null;
-    category: string;
-    country: string;
-    description: string;
+    category: string | null;
+    country: string | null;
+    description: string | null;
     image: string | null;
-    language: string;
-    published_at: string;
-    source: string;
-    title: string;
-    url: string;
+    language: string | null;
+    published_at: string | null;
+    source: string | null;
+    title: string | null;
+    url: string | null;
 }
 
 type Pagination = {

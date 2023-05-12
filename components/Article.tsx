@@ -1,14 +1,15 @@
 import ReadMoreButton from "./ReadMoreButton"
-
 type Props = {
     article: Article
 }
 
 const Article = ({ article }: Props) => {
     const ImageSrc = article.image ? article.image : "/FAC.png"
+    const ImageAlt = article.title ? article.title : "News"
+    
     return (
-        <article className="bg-slate-200 dark:bg-slate-800 flex flex-col shadow-md shadow-slate-400 dark:shadow-slate-700 hover:shadow-xl hover:shadow-slate-400 dark:hover:shadow-slate-700 hover:bg-slate-300/70 dark:hover:bg-slate-700/50 transition-all duration-200 ease-out rounded-lg max-w-md mx-auto">
-            <img src={ImageSrc} alt={article.title} loading="lazy" className="h-60 w-full object-cover rounded-t-lg " />
+        <article className="bg-slate-200 dark:bg-slate-800 flex flex-col shadow-md shadow-slate-400 dark:shadow-slate-700 hover:shadow-xl hover:shadow-slate-400 dark:hover:shadow-slate-700 hover:bg-slate-300/70 dark:hover:bg-slate-700/50 transition-all duration-200 ease-out rounded-lg w-full max-w-md mx-auto">
+            <img src={ImageSrc} alt={ImageAlt} className="h-60 w-full object-cover rounded-t-lg " />
             <div className="flex flex-1 flex-col">
                 <div className="flex flex-1 flex-col p-5">
                     <h2 className="font-bold font-serif ">{article.title}</h2>

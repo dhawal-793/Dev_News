@@ -17,7 +17,7 @@ const Navlinks = ({ navOpen, handleClick, className }: Props) => {
         return pathName?.split('/').pop() === path
     }
     return (
-        <nav className={`gap-8 pb-5 md:justify-between mx-auto border-gray-300 border-b ${className}`}>
+        <nav className={`pb-5 md:justify-between mx-auto border-gray-300 border-b ${className}`}>
             {navOpen &&
                 <div className="md:hidden absolute top-5 left-0 w-full px-5 flex justify-between">
                     <ThemeButton />
@@ -34,3 +34,4 @@ const Navlinks = ({ navOpen, handleClick, className }: Props) => {
 }
 
 export default Navlinks
+

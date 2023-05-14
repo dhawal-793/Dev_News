@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  .sm-notFound{
+    height: calc(100vh - 80px);
+  }
+  .md-notFound{
+    height: calc(100vh - 225px);
+  }
+}
 @layer components {
+
   .navlink {
     @apply hover:underline decoration-orange-400 dark:text-gray-100 text-center decoration-2 active:underline underline-offset-8 p-3 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
   }

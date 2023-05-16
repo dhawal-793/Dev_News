@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base{
+  .xs-notFound{
+    height: max(400px ,calc(100vh - 150px));
+  }
   .sm-notFound{
-    height: calc(100vh - 80px);
+    height: calc(100vh - 150px);
   }
   .md-notFound{
-    height: calc(100vh - 225px);
+    height: calc(100vh - 350px);
   }
 }
 @layer components {

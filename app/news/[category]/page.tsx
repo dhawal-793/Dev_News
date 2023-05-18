@@ -1,4 +1,5 @@
 import NewsList from "@/components/NewsList"
+import { categories } from "@/constants"
 import fetchNews from "@/lib/fetchNews"
 import { notFound } from "next/navigation"
 
@@ -7,7 +8,6 @@ type Props = {
 }
 
 const NewsByCategory = async ({ params: { category } }: Props) => {
-  const categories = ["general", "buisness", "entertainment", "health", "science", "sports", "technology"];
   if (!categories.includes(category)) { return notFound() }
   const news = await fetchNews(category)
   return (

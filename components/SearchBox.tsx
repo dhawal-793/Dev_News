@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 
 const SearchBox = () => {
     const [input, setInput] = useState("")
@@ -22,7 +23,8 @@ const SearchBox = () => {
             <button type="submit"
                 className="h-10 text-orange-400 disabled:text-gray-400 "
                 disabled={!input}
-            >SearchIcon
+            >
+                <MagnifyingGlassIcon className="w-5 h-5 "/>
             </button>
         </form>
     )

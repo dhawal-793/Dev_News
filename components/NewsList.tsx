@@ -1,6 +1,6 @@
 'use client'
 import Article from "./Article"
-import GridLayout from "./GridLayout"
+import GridLayout from "./Layouts/GridLayout"
 
 
 type Props = {

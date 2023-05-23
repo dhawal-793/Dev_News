@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 @layer base{
+
+ /* Works on Firefox */
+ * {
+  scrollbar-width: thin;
+  scrollbar-color: #FB923C;
+  scrollbar-track-color: #1E293B;
+}
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #FB923C;
+  /* background-image: linear-gradient(to bottom, #9fe2f9, #006eff) !important; */
+  /* border-radius: 20px; */
+  /* border: 3px solid orange; */
+}
+
   .xs-notFound{
     height: max(400px ,calc(100vh - 150px));
   }

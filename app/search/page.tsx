@@ -1,4 +1,5 @@
 import NewsList from "@/components/NewsList"
+import SearchNotFound from "@/components/Errors/SearchNotFound"
 import fetchNews from "@/lib/fetchNews"
 
 
@@ -12,7 +13,11 @@ const SearchPage = async ({ searchParams }: Props) => {
         <>
             <h1 className="capitalize border-b-2 pb-2 w-fit border-orange-400 font-serif font-semibold text-4xl
             ">Search Results for: {searchParams?.term}</h1>
-            <NewsList news={news} />
+            {news.data.length ?
+                <NewsList news={news} />
+                :
+                <SearchNotFound />
+            }
         </>
     )
 }

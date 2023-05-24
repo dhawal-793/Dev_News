@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-5 bg-gray-100 dark:bg-zinc-900 transition-all duration-1000 `} >
+      <body className={`${inter.className} p-5 bg-gray-100 dark:bg-zinc-900 transition-all duration-1000`} >
         <Providers>
           <Header />
           <div className="max-w-6xl mx-auto ">

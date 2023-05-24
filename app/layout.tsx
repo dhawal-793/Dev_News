@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import Header from '../components/Header'
 import Providers from './Providers'
+import BackToTopButton from '@/components/BackToTopButton'
 
 export const metadata = {
   title: 'DEV NEWS',
@@ -23,6 +24,7 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto ">
             {children}
           </div>
+          <BackToTopButton />
         </Providers>
       </body>
     </html>

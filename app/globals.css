@@ -2,44 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-
- /* Works on Firefox */
- * {
-  scrollbar-width: thin;
-  scrollbar-color: #FB923C;
-  scrollbar-track-color: #1E293B;
-}
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 8px;
-}
-*::-webkit-scrollbar-track {
-  background: #1E293B;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #FB923C;
-  /* background-image: linear-gradient(to bottom, #9fe2f9, #006eff) !important; */
-  /* border-radius: 20px; */
-  /* border: 3px solid orange; */
-}
-
-  .xs-notFound{
-    height: max(400px ,calc(100vh - 150px));
+@layer base {
+  :root {
+    --accent-primary: #f97316;
+    --accent-secondary: #1e293b;
   }
-  .sm-notFound{
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary);
+    scrollbar-track-color: var(--accent-secondary);
+  }
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: var(--accent-secondary);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    /* background-image: linear-gradient(to bottom, #9fe2f9, #006eff) !important; */
+    /* border-radius: 20px; */
+    /* border: 3px solid orange; */
+  }
+
+  .xs-notFound {
+    height: max(400px, calc(100vh - 150px));
+  }
+  .sm-notFound {
     height: calc(100vh - 150px);
   }
-  .md-notFound{
+  .md-notFound {
     height: calc(100vh - 350px);
   }
 }
 @layer components {
-
   .navlink {
-    @apply hover:underline decoration-orange-400 dark:text-gray-100 text-center decoration-2 active:underline underline-offset-8 p-3 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
+    @apply hover:underline decoration-accent font-bold hover:font-extrabold md:font-normal dark:text-light text-center decoration-2 active:underline underline-offset-8 p-3 cursor-pointer md:hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
   }
-  .navLink-md{
-    @apply bg-black text-white flex flex-col fixed right-0 top-0 md:hidden text-xs px-10 h-screen justify-center min-w-[12rem] w-1/2 max-w-[18rem] gap-5 transition-all duration-500
+  .navLinks-md {
+    @apply z-40 bg-light-primary dark:bg-dark-primary text-dark-primary dark:text-light-primary flex flex-col fixed right-0 top-0 md:hidden text-xs px-10 h-screen justify-center min-w-[12rem] w-1/2 max-w-[18rem] gap-5 transition-all duration-500;
   }
 }

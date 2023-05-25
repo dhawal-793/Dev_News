@@ -14,7 +14,7 @@ const Header = () => {
         <header>
             <Navbar handleClick={handleClick} isNavOpen={showMenu} />
             <Navlinks handleClick={handleClick} navOpen={showMenu} className="py-5 my-12 hidden md:flex text-sm max-w-6xl" />
-            <Navlinks handleClick={handleClick} navOpen={showMenu} className={` ${showMenu ? "translate-x-0" : "translate-x-80"} navLink-md`} />
+            <Navlinks handleClick={handleClick} navOpen={showMenu} className={` ${showMenu ? "translate-x-0" : "translate-x-80"} navLinks-md`} />
             <SearchBox />
         </header>
     )

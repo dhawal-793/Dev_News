@@ -17,12 +17,12 @@ const Navlinks = ({ navOpen, handleClick, className }: Props) => {
         return pathName?.split('/').pop() === path
     }
     return (
-        <nav className={`pb-5 md:justify-between mx-auto border-gray-300 border-b ${className}`}>
+        <nav className={`pb-5 md:justify-between mx-auto border-light border-b ${className}`}>
             {navOpen &&
                 <div className="md:hidden absolute top-5 left-0 w-full px-5 flex justify-between">
                     <ThemeButton />
                     <button className="block" onClick={() => handleClick()}>
-                        <XMarkIcon className="text-gray-300 hover:text-red-500 w-8 h-8 cursor-pointer z-50" />
+                        <XMarkIcon className="text-light hover:text-cancel w-8 h-8 cursor-pointer z-50" />
                     </button>
                 </div>
             }

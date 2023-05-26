@@ -22,10 +22,10 @@ const ThemeButton = () => {
   return (
     <div className="relative h-8 w-8 cursor-pointer" role="button" onClick={changeTheme}>
       <SunIcon
-        className={`text-yellow-500 absolute inset-0 transition-all duration-200 ease-linear ${currentTheme === "light" && "rotate-90 opacity-0"}`}
+        className={`text-sun absolute inset-0 transition-all duration-200 ease-linear ${currentTheme === "light" && "rotate-90 opacity-0"}`}
       />
       <MoonIcon
-        className={`text-blue-950 absolute inset-0 transition-all duration-200 ease-linear ${currentTheme === "dark" && "rotate-180 opacity-0"}`}
+        className={`text-moon absolute inset-0 transition-all duration-200 ease-linear ${currentTheme === "dark" && "rotate-180 opacity-0"}`}
       />
     </div>
   )

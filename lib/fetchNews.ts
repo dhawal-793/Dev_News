@@ -32,13 +32,12 @@ const fetchNews = async (
           }
         }`;
 
-
-
+  
   // Fetch Data
   const res = await fetch('https://luisantonio.stepzen.net/api/solid-olm/__graphql', {
     method: 'POST',
-    cache: isDynamic ? "no-cache" : "default",
-    next: isDynamic ? { revalidate: 0 } : { revalidate: 50 },
+    cache: "default",
+    next: isDynamic ? { revalidate: 20 } : { revalidate: 100 },
     headers: {
       "Content-Type": "application/json",
       Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
@@ -53,8 +52,6 @@ const fetchNews = async (
     })
   })
 
-
-
   const NewsResponse = await res.json();
 
   const news = sortNewsByImage(NewsResponse.data.myQuery)
@@ -63,8 +60,3 @@ const fetchNews = async (
 }
 
 export default fetchNews;
-
-
-
-
-

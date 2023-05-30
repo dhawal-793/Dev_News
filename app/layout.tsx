@@ -9,6 +9,7 @@ import BackToTopButton from '@/components/BackToTopButton'
 export const metadata = {
   title: 'DEV NEWS',
   description: 'Get the Latest News Anytime Anywhere with DevNews.',
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({

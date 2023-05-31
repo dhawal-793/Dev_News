@@ -36,6 +36,20 @@
   .md-notFound {
     height: calc(100vh - 350px);
   }
+
+  :is(:not(.dark) .text-accent)::selection {
+    background-color: rgb(113 113 122 / var(--tw-bg-opacity));
+  }
+  :is(.dark .text-accent)::selection {
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  }
+
+  :is(:not(.dark) .decoration-accent)::selection {
+    text-decoration: underline rgb(113 113 122 / var(--tw-bg-opacity));
+  }
+  :is(.dark .decoration-accent)::selection {
+    text-decoration: underline rgb(107 114 128 / var(--tw-bg-opacity));
+  }
 }
 @layer components {
   .navlink {

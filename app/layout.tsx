@@ -24,9 +24,9 @@ export default function RootLayout({
         <Providers>
           <div className="p-5">
             <Header />
-            <div className="max-w-6xl mx-auto ">
+            <main className="max-w-6xl mx-auto ">
               {children}
-            </div>
+            </main>
           </div>
           <BackToTopButton />
           <Footer />

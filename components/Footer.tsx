@@ -3,7 +3,7 @@ import { HeartIcon } from "@heroicons/react/24/solid"
 const Footer = () => {
     const year = new Date().getFullYear().toString()
     return (
-        <div className="w-full p-5  border-t-2 border-light-primary dark:border-dark-primary
+        <footer className="w-full p-5  border-t-2 border-light-primary dark:border-dark-primary
         text-dark-primary dark:text-light-primary flex flex-col md:flex-row md:px-20 justify-between items-center gap-3">
             <div className="text-xs">Copyright &copy; {year} <span className="text-accent">DevNews</span>
             </div>
@@ -12,7 +12,7 @@ const Footer = () => {
                     Dhawal Vijayvargiya
                 </a>
             </div>
-        </div>
+        </footer>
     )
 }
 

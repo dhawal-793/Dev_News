@@ -13,7 +13,7 @@ const SearchBox = () => {
         router.push(`/search?term=${input}`)
     }
     return (
-        <form onSubmit={handleSubmit} className="mt-10 mb-5 md:mt-5 px-3 max-w-6xl mx-auto flex gap-5 justify-between items-center border-b-2 md:border border-dark-secondary dark:border-light md:rounded-md">
+        <form onSubmit={handleSubmit} className="mt-6 md:mt-5 px-3 max-w-6xl mx-auto flex gap-5 justify-between items-center border-b-2 md:border border-dark-secondary dark:border-light md:rounded-md">
             <input type="text"
                 placeholder="Search Keywords..."
                 className="w-full h-10  flex-1 outline-none bg-transparent placeholder:text-light-primary text-accent"

@@ -16,8 +16,9 @@ const Article = ({ article }: Props) => {
                     <section className="mt-2 flex-1">
                         <p className="text-xs line-clamp-3 text-article-dark-primary dark:text-article-light-primary">{article.description}</p>
                     </section>
-                    <footer className="text-xs text-right ml-auto flex space-x-2 pt-5 italic text-article-light-secondary">
-                        <p>{article.source} -</p>
+                    <footer className="text-xs text-right ml-auto flex flex-col space-y-2 xs:flex-row xs:space-y-0 xs:space-x-2 pt-5 italic text-article-light-secondary">
+                        <p>{article.source} <span className="hidden xs:inline
+                        ">-</span></p>
                         <p>{article.published_at}</p>
                     </footer>
                 </div>

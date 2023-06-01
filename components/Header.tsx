@@ -32,7 +32,7 @@ export default Header
 
 const BlurdArea = () => {
     return (
-        <div className="">
+        <div>
             <div className="bg-light dark:bg-dark transition-all duration-1000 h-[0.8px] opacity-[1]" />
             <div className="bg-light dark:bg-dark transition-all duration-1000 h-[0.8px] opacity-[0.95]" />
             <div className="bg-light dark:bg-dark transition-all duration-1000 h-[0.8px] opacity-[0.9]" />

@@ -6,6 +6,8 @@
   :root {
     --accent-primary: #f97316;
     --accent-secondary: #1e293b;
+    --dark:#18181b;
+    --light:#f3f4f6;
   }
   /* Works on Firefox */
   * {
@@ -35,6 +37,12 @@
   }
   .md-notFound {
     height: calc(100vh - 350px);
+  }
+  .shadow-light{
+    box-shadow: 0px 30px 30px -6px var(--light);
+  }
+  .shadow-dark{
+    box-shadow: 0px 40px 40px -6px var(--dark);
   }
 
   :is(:not(.dark) .text-accent)::selection {

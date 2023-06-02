@@ -26,8 +26,8 @@ const ReadMoreButton = ({ article }: Props) => {
 
         }}
             prefetch={false}
-            className="flex justify-center items-center bg-orange-400 h-10 rounded-b-lg dark:text-gray-900 hover:bg-orange-500">Read More</Link>
-        // <button onClick={handleClick} className="bg-orange-400 h-10 rounded-b-lg dark:text-gray-900 hover:bg-orange-500">Read More</button>
+            className="flex justify-center items-center bg-accent h-10 rounded-b-lg text-article-dark hover:bg-accent-primary">Read More</Link>
+        // <button onClick={handleClick} className="bg-orange-400 h-10 rounded-b-lg dark:text-zinc-800 hover:bg-orange-500">Read More</button>
     )
 }
 

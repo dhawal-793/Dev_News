@@ -4,10 +4,13 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import Header from '../components/Header'
 import Providers from './Providers'
+import BackToTopButton from '@/components/BackToTopButton'
+import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'DEV NEWS',
   description: 'Get the Latest News Anytime Anywhere with DevNews.',
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({
@@ -17,12 +20,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-5 bg-gray-100 dark:bg-zinc-900 transition-all duration-1000 `} >
+      <body className={`${inter.className} bg-light dark:bg-dark transition-all duration-1000 selection:bg-accent `} >
         <Providers>
-          <Header />
-          <div className="max-w-6xl mx-auto ">
-            {children}
+          <div className="p-5">
+            <Header />
+            <main className="max-w-6xl mx-auto ">
+              {children}
+            </main>
           </div>
+          <BackToTopButton />
+          <Footer />
         </Providers>
       </body>
     </html>

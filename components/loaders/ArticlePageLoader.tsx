@@ -1,47 +1,46 @@
-import React from 'react'
+import Line from "./Line"
+import Box from "./Box"
+import Paragraph from "./Paragraph"
 
 const ArticlePageLoader = () => {
     return (
-        <div>
-            <div className="flex flex-col pb-24 w-full mx-auto md:max-w-3xl lg:max-w-4xl animate-pulse">
-                <div className="h-96 w-full rounded-lg bg-blue-200 opacity-30 dark:bg-gray-500 ">
+        <div className="py-5">
+            <div className="flex space-y-3 flex-col pb-24 w-full mx-auto md:max-w-3xl lg:max-w-5xl animate-pulse">
+                <div className="space-y-2 pb-5">
+                    <Line height="h-12" opacity="opacity-80" rounded="rounded-lg" />
+                    <Line height="h-12" width="w-2/5" opacity="opacity-80" rounded="rounded-lg" />
                 </div>
-                <div className="">
-                    <div className='bg-blue-200 opacity-50 dark:bg-gray-700/90 h-28 w-full rounded-lg my-5'></div>
-                    <div className="flex py-5 h-16">
-                        <div className="bg-blue-200 opacity-40 dark:bg-gray-500/80 w-1/3 rounded-lg"></div>
-                        <div className="bg-blue-200 opacity-40 dark:bg-gray-500/80 w-1/3 mx-5 rounded-lg"></div>
-                        <div className="bg-blue-200 opacity-40 dark:bg-gray-500/80 w-1/3 rounded-lg"></div>
+                <Box />
+                <div className="flex flex-wrap justify-between sm:space-x-4 py-3 md:max-w-2xl">
+                    <Line opacity="opacity-50" height="h-3 sm:h-4" width="w-1/3 mb-2 sm:w-44 sm:pb-0" rounded="rounded-md" />
+                    <Line opacity="opacity-50" height="h-3 sm:h-4" width="w-1/3 mb-2 sm:w-44 sm:pb-0" rounded="rounded-md" />
+                    <div className="w-1/2 h-3 sm:hidden" />
+                    <Line width="w-1/3 sm:w-44" height="h-3 sm:h-4" opacity="opacity-50" rounded="rounded-md" />
+                </div>
+                <div className="py-5 space-y-5 px-2">
+                    <div className="space-y-2">
+                        <Paragraph />
+                        <Paragraph />
+                        <Paragraph width="w-3/4" />
                     </div>
-                    <div className="rounded-lg bg-indigo-300 opacity-20 dark:bg-gray-500 w-full h-10 my-4"></div>
-                    <div className="rounded-lg bg-indigo-300 opacity-20 dark:bg-gray-500 w-full h-10 my-4"></div>
-                    <div className="rounded-lg bg-indigo-300 opacity-20 dark:bg-gray-500 w-full h-10 my-4"></div>
-                    <div className="rounded-lg bg-indigo-300 opacity-20 dark:bg-gray-500 w-full h-10 my-4"></div>
-                    <div className="rounded-lg bg-indigo-300 opacity-20 dark:bg-gray-500 w-full h-10 my-4"></div>
+                    <div className="space-y-2">
+                        <Paragraph />
+                        <Paragraph width="w-1/2" />
+                    </div>
+                    <div className="space-y-2">
+                        <Paragraph />
+                        <Paragraph />
+                        <Paragraph />
+                        <Paragraph width="w-3/4" />
+                    </div>
+                    <div className="space-y-2">
+                        <Paragraph />
+                        <Paragraph />
+                        <Paragraph width="w-1/4" />
+                    </div>
                 </div>
             </div>
         </div>
-        // <div className="p-4 md:w-1/3">
-        //     <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-        //         <div className="lg:h-48 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
-        //         <div className="p-6">
-        //             <h2 className="bg-gray-400 animate-pulse h-4 w-1/4 mb-2"></h2>
-        //             <h1 className="w-1/2 mb-4 h-6 animate-pulse bg-gray-500"></h1>
-        //             <p className="leading-relaxed mb-3 w-full h-3 animate-pulse bg-gray-400"></p>
-        //             <p className="leading-relaxed mb-3 w-2/3 h-3 animate-pulse bg-gray-400"></p>
-        //             <p className="leading-relaxed mb-3 w-1/2 h-3 animate-pulse bg-gray-400"></p>
-        //             <div className="flex items-center flex-wrap ">
-        //                 <a className="bg-indigo-300 h-4 animate-pulse mt-2 w-32 inline-flex items-center md:mb-2 lg:mb-0">
-
-        //                 </a>
-        //                 <span className="bg-indigo-300 w-16 mt-2 h-4 animate-pulse mr-3 px-2 inline-flex items-center ml-auto leading-none text-sm pr-5 py-1">
-
-        //                 </span>
-
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 

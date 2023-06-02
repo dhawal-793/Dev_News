@@ -1,50 +1,76 @@
-'use client'
+
 import ArticlePage from "@/components/ArticlePage";
 import BackButton from "@/components/BackButton";
-import { notFound, useSearchParams } from "next/navigation"
+import { NOTFOUND_METADATA } from "@/constants";
+import { notFound } from "next/navigation"
 
+type Props = {
+    searchParams?: Article;
+}
 
-const Article = () => {
-
-    // if (!searchParams || Object.entries(searchParams).length === 0)  {
-    //     return notFound();
-    // }
-    const data = useSearchParams();
+const checkValidUrl = (searchParams: Article) => {
     const articleData = {
         title: {
-            has: data.has('title'),
-            value: data.get('title')
+            has: 'title' in searchParams,
+            value: searchParams.title
         },
         category: {
-            has: data.has('category'),
-            value: data.get('category')
+            has: 'category' in searchParams,
+            value: searchParams.category
         },
         country: {
-            has: data.has('country'),
-            value: data.get('country')
+            has: 'country' in searchParams,
+            value: searchParams.country
         },
         description: {
-            has: data.has('description'),
-            value: data.get('description')
+            has: 'description' in searchParams,
+            value: searchParams.description
         },
         language: {
-            has: data.has('language'),
-            value: data.get('language')
+            has: 'language' in searchParams,
+            value: searchParams.language
         },
         published_at: {
-            has: data.has('published_at'),
-            value: data.get('published_at')
+            has: 'published_at' in searchParams,
+            value: searchParams.published_at
         },
         url: {
-            has: data.has('url'),
-            value: data.get('url')
+            has: 'url' in searchParams,
+            value: searchParams.url
         },
         source: {
-            has: data.has('source'),
-            value: data.get('source')
+            has: 'source' in searchParams,
+            value: searchParams.source
         },
     }
-    const isValidUrl = Object.values(articleData).every(item => item.has === true && item.value !== '')
+    return Object.values(articleData).every(item => item.has === true && item.value !== '')
+}
+
+
+export async function generateMetadata({ searchParams }: Props) {
+
+    if (!searchParams || Object.entries(searchParams).length === 0) {
+        return NOTFOUND_METADATA
+    }
+    if (searchParams.title === null) return NOTFOUND_METADATA
+
+    const isValidUrl = checkValidUrl(searchParams)
+    if (!isValidUrl) return NOTFOUND_METADATA;
+
+    return {
+        title: `${searchParams.title.toUpperCase()} | DEV NEWS`,
+        description: `${searchParams.title}`,
+    };
+}
+
+const Article = ({ searchParams }: Props) => {
+
+    if (!searchParams || Object.entries(searchParams).length === 0) {
+        return notFound();
+    }
+    console.log("SearchParams=> ", searchParams);
+    const isValidUrl = checkValidUrl(searchParams)
+
     if (!isValidUrl) return notFound();
 
     return (

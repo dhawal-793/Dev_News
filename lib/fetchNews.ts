@@ -32,7 +32,7 @@ const fetchNews = async (
           }
         }`;
 
-  
+
   // Fetch Data
   const res = await fetch('https://luisantonio.stepzen.net/api/solid-olm/__graphql', {
     method: 'POST',
@@ -52,10 +52,13 @@ const fetchNews = async (
     })
   })
 
-  const NewsResponse = await res.json();
+  const newsResponse = await res.json();
+  let news = newsResponse;
+  if (newsResponse.data.myQuery !== null) {
+    news = sortNewsByImage(newsResponse.data.myQuery)
+  }
 
-  const news = sortNewsByImage(NewsResponse.data.myQuery)
-  console.log("Sorted News =>\n", news)
+  // console.log("Sorted News =>\n", news)
   return news
 }
 

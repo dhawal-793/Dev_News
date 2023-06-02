@@ -3,13 +3,10 @@ import ArticlePage from "@/components/ArticlePage";
 import BackButton from "@/components/BackButton";
 import { notFound, useSearchParams } from "next/navigation"
 
-// type Props = {
-//     searchParams?: Article;
-// }
 
 const Article = () => {
 
-    // if ((searchParams && Object.entries(searchParams).length === 0) || !searchParams) {
+    // if (!searchParams || Object.entries(searchParams).length === 0)  {
     //     return notFound();
     // }
     const data = useSearchParams();

@@ -46,6 +46,7 @@ const ArticlePage = () => {
                             </p>
                         </div>
                         <p className="py-5 text-lg text-left break-words text-dark-primary dark:text-light-primary" dangerouslySetInnerHTML={{ __html: Description }}></p>
+                        {article.url && <p className="text-article-dark-primary dark:text-article-light-primary">Read Whole Article <a href={article.url} className="text-accent hover:underline underline-offset-2" target="_blank">here</a>.</p>}
                     </div>
                 </section>
             </article>

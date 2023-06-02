@@ -7,3 +7,8 @@ export const categories: Category[] = [
     "sports",
     "technology"
 ]
+
+export const NOTFOUND_METADATA = {
+    title: "404 Page Not Found",
+    description: "Requested Page is no longer here or never existed in the first place."
+}

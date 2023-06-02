@@ -2,19 +2,49 @@ import NewsList from "@/components/NewsList"
 import SearchNotFound from "@/components/Errors/SearchNotFound"
 import fetchNews from "@/lib/fetchNews"
 import BackButton from "@/components/BackButton"
-
+import Title from "@/components/Title"
+import InvalidSearch from "@/components/Errors/InvalidSearch"
 
 type Props = {
-    searchParams?: { term: string }
+    searchParams: { term: string }
 }
 
+export async function generateMetadata({ searchParams }: Props) {
+    const keyword = searchParams.term;
+
+    // return Invalid if query not found or empty
+    if (keyword === "" || keyword === undefined) {
+        return {
+            title: "Invalid Search Query",
+            description: "Searched Query Not Valid, Please Enter A Valid Query"
+        }
+    }
+
+    // Fetch data if empty, return Query Not Found argument 
+    const news = await fetchNews('general', keyword, true)
+    if (!news.data.length) {
+        return {
+            title: "No News Available related to Searched Query",
+            description: "No News Available related to Searched Query, Please Enter A Different Query"
+        }
+    }
+
+    return {
+        title: `${keyword} | DEV NEWS`,
+        description: `News related to - ${keyword} | DEV NEWS`,
+    };
+}
+
+
 const SearchPage = async ({ searchParams }: Props) => {
-    const news = await fetchNews('general', searchParams?.term, true)
+    const keyword = searchParams?.term
+    if (keyword === "" || keyword === undefined) return <InvalidSearch />
+
+    const news = await fetchNews('general', keyword, true)
     return (
         <>
             <BackButton />
-            <h1 className="capitalize border-b-2 pb-2 w-fit border-orange-400 font-serif font-semibold text-4xl
-            ">Search Results for: {searchParams?.term}</h1>
+            <Title name="Search" value={keyword || ""} />
             {news.data.length ?
                 <NewsList news={news} />
                 :

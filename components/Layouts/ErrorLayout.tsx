@@ -15,7 +15,7 @@ const ErrorLayout = ({ ErrorHeading, SubHeading, ErrorDescription, NotFoundError
                 <p className="text-dark dark:text-light-primary text-2xl md:text-3xl lg:text-4xl">{SubHeading}</p>
                 <div className="pt-8 text-sm md:text-base text-light-secondary">
                     <p>{ErrorDescription}</p>
-                    <p className="leading-loose">Return to <Link href="/" className=" border-b-2 border-accent pb-0.5">Home</Link> Page {NotFoundError}</p>
+                    <p className="leading-loose">Return to <Link href="/" className="underline underline-offset-2 decoration-accent selection:!decoration-light">Home</Link> Page {NotFoundError}</p>
                 </div>
             </div>
         </div>

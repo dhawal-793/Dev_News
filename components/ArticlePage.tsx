@@ -17,31 +17,36 @@ const ArticlePage = () => {
         source: data.get('source'),
     }
 
-    const ImageSrc = article.image ? article.image : "/FAC.png";
+    const ImageAlt = article.title ? article.title : "News"
     const Description = article.description ? article.description : "";
 
     return (
 
         <>
             <article>
-                <section className="flex flex-col pb-24 w-full mx-auto md:max-w-3xl lg:max-w-5xl ">
-                    <h1 className="tracking-wider text-2xl xs:text-4xl sm:text-5xl lg:text-6xl font-serif capitalize pt-5 pb-8 text-dark dark:text-light">{article.title}</h1>
-                    <img src={ImageSrc} alt={article.title ? article.title : "Image not Available"} className=" w-full  object-cover rounded-lg shadow-md" />
+                <section className="flex flex-col w-full pb-24 mx-auto md:max-w-3xl lg:max-w-5xl ">
+                    <h1 className="pt-5 pb-8 font-serif text-2xl tracking-wider capitalize xs:text-4xl sm:text-5xl lg:text-6xl text-dark dark:text-light">{article.title}</h1>
+                    {article.image ? <img src={article.image} alt={ImageAlt} className="object-cover w-full rounded-lg shadow-md" /> :
+                        <>
+                            <img src="/Image_Not_Found_Dark.jpg" alt="Image Not ound" className="hidden object-cover w-full rounded-lg shadow-md dark:block" />
+                            <img src="/Image_Not_Found_Light.jpg" alt="Image Not ound" className="block object-cover w-full rounded-lg shadow-md dark:hidden" />
+                        </>
+                    }
                     <div className="">
-                        <div className="text-xs flex flex-wrap justify-between sm:divide-x-2 divide-light-primary sm:space-x-4 py-5">
-                            <h2 className="font-bold w-full xs:w-1/2 sm:w-auto space-x-2">
+                        <div className="flex flex-wrap justify-between py-5 text-xs sm:divide-x-2 divide-light-primary sm:space-x-4">
+                            <h2 className="w-full space-x-2 font-bold xs:w-1/2 sm:w-auto">
                                 <span className="text-accent">  By:</span>
                                 <span className="text-light-secondary">
                                     {article.author || "Unknown"}
                                 </span>
                             </h2>
-                            <h2 className="font-bold xs:text-right sm:pl-4 w-full xs:w-1/2 sm:w-auto space-x-2">
+                            <h2 className="w-full space-x-2 font-bold xs:text-right sm:pl-4 xs:w-1/2 sm:w-auto">
                                 <span className="text-accent">  Source:</span>
                                 <span className="text-light-secondary">
                                     {article.source || "Unknown"}
                                 </span>
                             </h2>
-                            <p className="w-full flex-1 xs:text-right sm:text-left sm:pl-4 text-accent-primary dark:text-accent">
+                            <p className="flex-1 w-full xs:text-right sm:text-left sm:pl-4 text-accent-primary dark:text-accent">
                                 {article.published_at}
                             </p>
                         </div>

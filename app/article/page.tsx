@@ -1,7 +1,7 @@
 
 import ArticlePage from "@/components/ArticlePage";
 import BackButton from "@/components/BackButton";
-import { NOTFOUND_METADATA } from "@/constants";
+import { NOTFOUND_METADATA } from "@/lib/constants";
 import { notFound } from "next/navigation"
 
 type Props = {

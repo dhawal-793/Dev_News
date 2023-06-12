@@ -12,8 +12,8 @@ const Article = ({ article }: Props) => {
                 article.image ?
                     <img src={article.image} alt={ImageAlt} className="object-cover w-full rounded-t-lg h-60 "/> :
                     <>
-                        <img src="/Image_Not_found_Dark.jpg" alt="Image Not Found" className="hidden object-cover w-full rounded-t-lg h-60 dark:block" />
-                        <img src="/Image_Not_found_Light.jpg" alt="Image Not Found" className="block object-cover w-full rounded-t-lg h-60 dark:hidden" />
+                        <img src="/Image_Not_Found_Dark.jpg" alt="Image Not Found" className="hidden object-cover w-full rounded-t-lg h-60 dark:block" />
+                        <img src="/Image_Not_Found_Light.jpg" alt="Image Not Found" className="block object-cover w-full rounded-t-lg h-60 dark:hidden" />
                     </>
 
             }

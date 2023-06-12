@@ -1,7 +1,7 @@
 'use client'
 import { XMarkIcon } from "@heroicons/react/24/solid"
 import { usePathname } from "next/navigation"
-import { categories } from "../constants"
+import { categories } from "../lib/constants"
 import NavLink from "./NavLink"
 import ThemeButton from "./ThemeButton"
 

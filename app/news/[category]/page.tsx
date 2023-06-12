@@ -1,7 +1,7 @@
 import BackButton from "@/components/BackButton"
 import NewsList from "@/components/NewsList"
 import Title from "@/components/Title"
-import { NOTFOUND_METADATA, categories } from "@/constants"
+import { NOTFOUND_METADATA, categories } from "@/lib/constants"
 import fetchNews from "@/lib/fetchNews"
 import { notFound } from "next/navigation"
 

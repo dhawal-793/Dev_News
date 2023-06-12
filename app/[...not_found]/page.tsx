@@ -1,4 +1,4 @@
-import { NOTFOUND_METADATA } from "@/constants"
+import { NOTFOUND_METADATA } from "@/lib/constants"
 import { notFound } from "next/navigation"
 
 export const metadata = NOTFOUND_METADATA

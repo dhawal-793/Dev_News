@@ -1,6 +1,6 @@
 import NewsList from "@/components/NewsList";
-import { dummyNews } from "@/dummyNewsData";
-import { categories } from "@/constants";
+import { dummyNews } from "@/lib/dummyNewsData";
+import { categories } from "@/lib/constants";
 import fetchNews from "@/lib/fetchNews";
 export default async function Home() {
   const news = dummyNews();

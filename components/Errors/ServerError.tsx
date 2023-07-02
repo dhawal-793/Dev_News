@@ -4,9 +4,10 @@ import ErrorLayout from "../Layouts/ErrorLayout"
 const ServerError = () => {
     return (
         <ErrorLayout
-            ErrorHeading="Opps!"
-            SubHeading="Something went wrong!"
-            ErrorDescription="Try Again After Some time or"
+            ErrorHeading="Oops!"
+            SubHeading="Something went wrong"
+            ErrorDescription="Internal Server Error occured, Please Try Again After Some time or"
+            InternalServerError={true}
         />
     )
 }

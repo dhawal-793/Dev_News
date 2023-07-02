@@ -36,8 +36,7 @@ const fetchNews = async (
   // Fetch Data
   const res = await fetch('https://luisantonio.stepzen.net/api/solid-olm/__graphql', {
     method: 'POST',
-    cache: "default",
-    next: isDynamic ? { revalidate: 20 } : { revalidate: 100 },
+    next: isDynamic ? { revalidate: 30 } : { revalidate: 180 },
     headers: {
       "Content-Type": "application/json",
       Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,

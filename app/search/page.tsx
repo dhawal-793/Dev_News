@@ -9,11 +9,13 @@ type Props = {
     searchParams: { term: string }
 }
 
+const searchPattern = /^[a-zA-Z0-9]+$/;
+
 export async function generateMetadata({ searchParams }: Props) {
     const keyword = searchParams.term;
 
     // return Invalid if query not found or empty
-    if (keyword === "" || keyword === undefined) {
+    if (keyword === "" || keyword === undefined || !searchPattern.test(keyword)) {
         return {
             title: "Invalid Search Query",
             description: "Searched Query Not Valid, Please Enter A Valid Query"
@@ -38,7 +40,9 @@ export async function generateMetadata({ searchParams }: Props) {
 
 const SearchPage = async ({ searchParams }: Props) => {
     const keyword = searchParams?.term
-    if (keyword === "" || keyword === undefined) return <InvalidSearch />
+    if (keyword === "" || keyword === undefined || !searchPattern.test(keyword)) {
+        return <InvalidSearch />
+    }
 
     const news = await fetchNews('general', keyword, true)
     return (

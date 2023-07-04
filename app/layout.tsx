@@ -25,6 +25,32 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: light)', color: '#f3f4f6' },
     { media: '(prefers-color-scheme: dark)', color: '#18181b' },
   ],
+  openGraph: {
+    title: 'THE DEV NEWS',
+    description: 'The Dev News - Get the Latest News Anytime Anywhere with DevNews.',
+    siteName: 'THE DEV NEWS',
+    url: 'https://dev-news-793.vercel.app/',
+    images: '/og-image.png',
+    locale: 'en_US',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'THE DEV NEWS',
+    description: 'The Dev News - Get the Latest News Anytime Anywhere with DevNews.'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true
+    },
+  },
+  category: 'technology',
+  alternates: {
+    canonical: 'https://dev-news-793.vercel.app'
+  }
   
 }
 

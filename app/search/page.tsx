@@ -32,8 +32,8 @@ export async function generateMetadata({ searchParams }: Props) {
     }
 
     return {
-        title: `${keyword} | DEV NEWS`,
-        description: `News related to - ${keyword} | DEV NEWS`,
+        title: `${keyword} | THE DEV NEWS`,
+        description: `News related to - ${keyword} | THE DEV NEWS`,
     };
 }
 

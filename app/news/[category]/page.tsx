@@ -15,8 +15,8 @@ export async function generateMetadata({ params: { category } }: Props) {
   }
 
   return {
-    title: `${category.toUpperCase()} | DEV NEWS`,
-    description: `News related to - ${category} category | DEV NEWS`,
+    title: `${category.toUpperCase()} | THE DEV NEWS`,
+    description: `News related to - ${category} category | THE DEV NEWS`,
   };
 }
 

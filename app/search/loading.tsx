@@ -5,8 +5,8 @@ export default function Loading() {
     return (
         <GridLayout>
             {
-                [...Array(10)].map((e) => {
-                    return <ArticleLoader key={e} />
+                [...Array(12)].map((_, i) => {
+                    return <ArticleLoader key={i} />
                 })
             }
         </GridLayout>
